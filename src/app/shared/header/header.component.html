@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title slot="start">{{ title }}</ion-title>
+    <ng-container *ngIf="user$ | async as user; else notLoggedIn">
+      <ion-title (click)="openActions()" slot="end">{{
+        user.username
+      }}</ion-title>
+    </ng-container>
+    <ng-template #notLoggedIn>
+      <ion-title slot="end">
+        <ion-button [routerLink]="['/login']">Login</ion-button>
+      </ion-title>
+    </ng-template>
+  </ion-toolbar>
+</ion-header>

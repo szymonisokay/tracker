@@ -1,9 +1,92 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
+  <div class="content-center">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1 class="ion-text-center">TRACKER</h1>
+        </ion-col>
+      </ion-row>
 
-<ion-content>
+      <ion-row>
+        <ion-col>
+          <p class="ion-text-center">Login into your Tracker app</p>
+        </ion-col>
+      </ion-row>
 
+      <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item color="light">
+                <ion-label position="floating">Username</ion-label>
+                <ion-input
+                  placeholder="Enter username"
+                  required
+                  formControlName="username"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item color="light">
+                <ion-label position="floating">Email</ion-label>
+                <ion-input
+                  placeholder="Enter email"
+                  required
+                  formControlName="email"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item color="light">
+                <ion-label position="floating">Password</ion-label>
+                <ion-input
+                  type="password"
+                  placeholder="Enter password"
+                  required
+                  formControlName="password"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item color="light">
+                <ion-label position="floating">Confirm Password</ion-label>
+                <ion-input
+                  type="password"
+                  placeholder="Confirm password"
+                  required
+                  formControlName="password2"
+                ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-button type="submit" expand="block" color="dark"
+                >Register</ion-button
+              >
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+
+      <ion-row>
+        <ion-col>
+          <p class="ion-text-center">
+            Already have an account?
+            <span [routerLink]="['/login']">Sign In</span>
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

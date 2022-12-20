@@ -1,0 +1,11 @@
+<button
+  [ngClass]="[
+    'point-button',
+    pointsButton.type === 'success' ? 'success' : 'danger'
+  ]"
+  [ngStyle]="{
+    top: pointsButton.position.y + 'px',
+    left: pointsButton.position.x + 'px'
+  }"
+  (click)="onButtonClick()"
+></button>

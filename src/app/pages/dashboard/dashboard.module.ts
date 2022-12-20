@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPageRoutingModule } from './login-routing.module';
+import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
-import { LoginPage } from './login.page';
+import { DashboardPage } from './dashboard.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule,
+    FormsModule,
     IonicModule,
-    LoginPageRoutingModule,
+    DashboardPageRoutingModule,
     SharedModule,
   ],
-  declarations: [LoginPage],
+  declarations: [DashboardPage],
 })
-export class LoginPageModule {}
+export class DashboardPageModule {}

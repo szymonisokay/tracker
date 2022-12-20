@@ -13,13 +13,17 @@
         </ion-col>
       </ion-row>
 
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
         <ion-grid>
           <ion-row>
             <ion-col>
               <ion-item color="light">
                 <ion-label position="floating">Email</ion-label>
-                <ion-input placeholder="Enter email" required></ion-input>
+                <ion-input
+                  placeholder="Enter email"
+                  required
+                  formControlName="email"
+                ></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -28,20 +32,34 @@
             <ion-col>
               <ion-item color="light">
                 <ion-label position="floating">Password</ion-label>
-                <ion-input placeholder="Enter password" required></ion-input>
+                <ion-input
+                  type="password"
+                  placeholder="Enter password"
+                  required
+                  formControlName="password"
+                ></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
 
           <ion-row>
             <ion-col>
-              <ion-button type="submit" form expand="block" color="dark"
+              <ion-button type="submit" expand="block" color="dark"
                 >Login</ion-button
               >
             </ion-col>
           </ion-row>
         </ion-grid>
       </form>
+
+      <ion-row>
+        <ion-col>
+          <p class="ion-text-center">
+            Don't have an account?
+            <span [routerLink]="['/register']">Sign Up</span>
+          </p>
+        </ion-col>
+      </ion-row>
     </ion-grid>
   </div>
 </ion-content>

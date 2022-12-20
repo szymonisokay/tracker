@@ -1,0 +1,24 @@
+<app-header title="Game"></app-header>
+
+<ion-content>
+  <div class="content-center column">
+    <div *ngIf="isGameOver$ | async">
+      <h1>Game Over</h1>
+      <p class="ion-text-center">
+        Points: <strong>{{ points$ | async }}</strong>
+      </p>
+    </div>
+    <ng-container *ngIf="!(isGameStarted$ | async); else gameTemplate">
+      <ion-button (click)="startGame()" color="dark">Start game</ion-button>
+    </ng-container>
+  </div>
+  <ng-template #gameTemplate>
+    <h1 class="timer">{{countdownTimer$ | async}}</h1>
+    <app-points-button
+      *ngFor="let pointsButton of pointsButtons$ | async"
+      [pointsButton]="pointsButton"
+      (onPointsButtonClick)="onPointsButtonClick($event)"
+    ></app-points-button>
+    <h4 class="points">Points: {{ points$ | async }}</h4>
+  </ng-template>
+</ion-content>

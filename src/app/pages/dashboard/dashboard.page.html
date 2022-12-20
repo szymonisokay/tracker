@@ -1,0 +1,17 @@
+<app-header title="TRACKER"></app-header>
+
+<ion-content>
+  <ng-container *ngIf="points$ | async as points">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h3>Your latest points</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let points of points.gamePoints">
+        <ion-col>{{points.user.username}}</ion-col>
+        <ion-col>{{points.points}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-container>
+</ion-content>
