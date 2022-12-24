@@ -17,7 +17,7 @@ type Type = 'success' | 'danger';
 
 export interface PointsButtonEvent {
   id: number;
-  points: Points;
+  points: number;
 }
 
 export const PointsButtonTypes: Type[] = ['success', 'danger'];
