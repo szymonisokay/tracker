@@ -1,10 +1,14 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'tracker',
+  appId: 'com.clicktracker.app',
+  appName: 'Tracker',
   webDir: 'www',
-  bundledWebRuntime: false
+  bundledWebRuntime: false,
+  server: {
+    url: 'http://192.168.0.105:4200',
+    cleartext: true,
+  },
 };
 
 export default config;

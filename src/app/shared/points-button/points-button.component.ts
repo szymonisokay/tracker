@@ -10,7 +10,7 @@ export class PointsButton {
 
   @Output() onPointsButtonClick = new EventEmitter<PointsButtonEvent>();
 
-  onButtonClick() {
+  onButtonTouchEnd(event: TouchEvent) {
     const pointsButtonEvent: PointsButtonEvent = {
       id: this.pointsButton.id,
       points: this.pointsButton.points,
