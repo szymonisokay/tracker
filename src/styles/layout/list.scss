@@ -1,0 +1,7 @@
+.list-md-lines-full {
+  .item {
+    &:last-of-type {
+      --border-width: 0 0 0 0 !important;
+    }
+  }
+}

@@ -1,26 +1,31 @@
 <app-header title="About"></app-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <h3>Authors:</h3>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>Szymon Wałach</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>Dawid Jurczak</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>Aleksander Goli</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>Szymon Piotrowski</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>Krzysztof Piwowar</ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-card class="ion-margin">
+    <ion-card-header>
+      <ion-card-title>Authors</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item *ngFor="let author of authors">
+          <ion-label>{{author}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="ion-margin">
+    <ion-card-header>
+      <ion-card-title>About app</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        <p>
+          This app is all about clicking green buttons to earn points. Avoid the
+          red buttons, otherwise your points will decrease with each click.
+          Check your points on the dashboard.<br />
+          The leaderboard tab contains the points of all the top clickers.
+        </p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

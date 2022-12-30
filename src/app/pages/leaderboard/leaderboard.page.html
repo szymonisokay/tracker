@@ -2,17 +2,18 @@
 
 <ion-content>
   <ng-container *ngIf="points$ | async as points">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <h3>Leaderboard</h3>
-        </ion-col>
-      </ion-row>
-      <ion-row *ngFor="let points of points.gamePoints; let i = index">
-        <ion-col size="auto">{{i+1}}.</ion-col>
-        <ion-col>{{points.user.username}}</ion-col>
-        <ion-col>{{points.points}}</ion-col>
-      </ion-row>
-    </ion-grid>
+    <ion-card class="ion-margin">
+      <ion-card-header>
+        <ion-card-title>Leaderboard </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list lines="full">
+          <ion-item *ngFor="let points of points.gamePoints; let i = index">
+            <ion-label> {{i+1}}. {{points.user.username}}</ion-label>
+            <ion-label class="ion-text-end">{{points.points}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
   </ng-container>
 </ion-content>
